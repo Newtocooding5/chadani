@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Are You Beautiful?</title>
+    <style>
+        body {
+            background-image: url(https://i.pinimg.com/736x/74/f4/f5/74f4f548392fbdafbe8a5d9764c83eaf.jpg
+            );
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #noButton {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <h1>Are You Beautiful?</h1>
+    <button id="yesButton">Yes</button>
+    <button id="noButton">No</button>
+
+    <script>
+        document.getElementById('yesButton').onclick = function() {
+            window.location.href = 'result.html';
+        };
+
+        document.getElementById('noButton').onclick = function() {
+            moveButton();
+        };
+
+        function moveButton() {
+            const button = document.getElementById('noButton');
+            const x = Math.random() * (window.innerWidth - button.offsetWidth);
+            const y = Math.random() * (window.innerHeight - button.offsetHeight);
+            button.style.position = 'absolute';
+            button.style.left = x + 'px';
+            button.style.top = y + 'px';
+        }
+    </script>
+</body>
+</html>
